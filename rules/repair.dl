@@ -1,0 +1,126 @@
+// rules/repair.dl — the restriction-aware Horn projection (as Souffle Datalog)
+//
+// This file captures the S1 - S3 and D1 - D5 rules. Restriction facts are propagated through class and property hierarchies.
+// When two restrictions meet, they are pattern-matched via the clash rules. The clash rules derive disjointness between classes.
+// Note that a class that is disjoint with itself is unsatisfiable, of course.
+//
+// Naming: Souffle reserves `min`, `max` and `range`, so the relations are atleast, atmost and Range (Func and Domain are also capitalised). 
+// Symbols are full IRIs; TOP is owl:Thing. Variables: a, b, c, d, e, f, g are classes; r, s, t are object properties; n, m are integers.
+
+// declarations
+
+.decl sub(c:symbol, d:symbol)       .input sub      .output sub     // c \sqsubseteq d  (named or auxiliary classes, and the directed correspondences)
+.decl subp(r:symbol, s:symbol)      .input subp     .output subp    // r \sqsubseteq s  (object properties, and the directed correspondences)
+.decl disj(c:symbol, d:symbol)      .input disj     .output disj    // c \sqcap d \sqsubseteq \bot
+.decl cls(c:symbol)                 .input cls      .output cls     // every class that occurs anywhere
+.decl prop(r:symbol)                .input prop     .output prop    // every object property that occurs anywhere
+
+// restrictions on the right of \sqsubseteq:  a \sqsubseteq [restriction]
+
+.decl some(a:symbol, r:symbol, f:symbol)                .input some     .output some     // a \sqsubseteq \exists r.f
+.decl only(a:symbol, r:symbol, f:symbol)                .input only     .output only     // a \sqsubseteq \forall r.f
+.decl atleast(a:symbol, r:symbol, n:number, f:symbol)   .input atleast  .output atleast  // a \sqsubseteq \geq n r.f
+.decl atmost(a:symbol, r:symbol, n:number, f:symbol)    .input atmost   .output atmost   // a \sqsubseteq \leq n r.f
+
+// restrictions on the left of \sqsubseteq:  [restriction] \sqsubseteq g  (definitions, general inclusions, domains)
+
+.decl someLHS(r:symbol, f:symbol, g:symbol)                 .input someLHS      .output someLHS     // \exists r.f \sqsubseteq g
+.decl onlyLHS(r:symbol, f:symbol, g:symbol)                 .input onlyLHS      .output onlyLHS     // \forall r.f \sqsubseteq g
+.decl atleastLHS(r:symbol, n:number, f:symbol, g:symbol)    .input atleastLHS   .output atleastLHS  // \geq n r.f \sqsubseteq g
+.decl atmostLHS(r:symbol, n:number, f:symbol, g:symbol)     .input atmostLHS    .output atmostLHS   // \leq n r.f \sqsubseteq g
+
+// global property axioms
+
+.decl Func(r:symbol)                .input Func     .output Func    // Func(r)
+.decl Range(r:symbol, g:symbol)     .input Range    .output Range   // Range(r, g)
+.decl Domain(r:symbol, g:symbol)    .input Domain   .output Domain  // Domain(r, g)
+
+// the answer
+
+.decl unsat(c:symbol)                               .output unsat
+
+#define TOP "http://www.w3.org/2002/07/owl#Thing"
+
+// TOP and reflexivity
+
+cls(TOP).
+sub(c, TOP) :- cls(c).      // every class is below TOP, so a restriction on TOP reaches every class
+sub(c, c)   :- cls(c).      // reflexivity: a rule written for "a below b" then also applies to a itself
+subp(r, r)  :- prop(r).
+
+// global property axioms, restated on TOP
+
+atmost(TOP, r, 1, TOP) :- Func(r).          // Func(r)       ->  TOP \sqsubseteq \leq 1 r.TOP
+only(TOP, r, g)        :- Range(r, g).      // Range(r, g)   ->  TOP \sqsubseteq \forall r.g
+someLHS(r, TOP, g)     :- Domain(r, g).     // Domain(r, g)  ->  \exists r.TOP \sqsubseteq g
+
+// The inheritance rules below then carry these facts down to every class, and then
+// D4 (functionality violation) and D5 (range violation) are D2 and D1 applied to them
+
+// hierarchies and disjointness
+
+sub(c, e)  :- sub(c, d), sub(d, e).         // class transitivity
+subp(r, t) :- subp(r, s), subp(s, t).       // property transitivity
+disj(c, d) :- disj(d, c).                   // disjointness is symmetric
+disj(c, e) :- sub(c, d), disj(d, e).        // and inherited by subclasses
+
+// With reflexivity this covers the report's lattice clash: c \sqsubseteq d, c \sqsubseteq e and d \sqcap e \sqsubseteq \bot
+// give disj(c, e), then disj(e, c), then disj(c, c), i.e. unsat(c).
+
+// \exists and \geq 1 are the same restriction
+
+atleast(a, r, 1, f)    :- some(a, r, f).
+some(a, r, f)          :- atleast(a, r, n, f), n >= 1.
+atleastLHS(r, 1, f, g) :- someLHS(r, f, g).
+someLHS(r, f, g)       :- atleastLHS(r, 1, f, g).
+
+// inheritance: a restriction on b holds of every a \sqsubseteq b
+
+some(a, r, f)       :- sub(a, b), some(b, r, f).
+only(a, r, f)       :- sub(a, b), only(b, r, f).
+atleast(a, r, n, f) :- sub(a, b), atleast(b, r, n, f).
+atmost(a, r, n, f)  :- sub(a, b), atmost(b, r, n, f).
+
+// S1: \exists and \geq n are monotone in the filler and in the property
+
+some(a, r, g)       :- some(a, r, f), sub(f, g).            // a \sqsubseteq \exists r.f,  f \sqsubseteq g  ->  a \sqsubseteq \exists r.g
+some(a, s, f)       :- some(a, r, f), subp(r, s).           // a \sqsubseteq \exists r.f,  r \sqsubseteq s  ->  a \sqsubseteq \exists s.f
+atleast(a, r, n, g) :- atleast(a, r, n, f), sub(f, g).      // a \sqsubseteq \geq n r.f, f \sqsubseteq g  ->  a \sqsubseteq \geq n r.g
+atleast(a, s, n, f) :- atleast(a, r, n, f), subp(r, s).     // a \sqsubseteq \geq n r.f, r \sqsubseteq s  ->  a \sqsubseteq \geq n s.f
+
+// S2: \forall is monotone in the filler and ANTI-monotone in the property
+
+only(a, r, g) :- only(a, r, f), sub(f, g).                  // a \sqsubseteq \forall r.f,  f \sqsubseteq g  ->  a \sqsubseteq \forall r.g
+only(a, r, f) :- only(a, s, f), subp(r, s).                 // a \sqsubseteq \forall s.f,  r \sqsubseteq s  ->  a \sqsubseteq \forall r.f   (the r-successors are among the s-successors)
+
+// S3: \leq n is ANTI-monotone in the filler and in the property
+
+atmost(a, r, n, g) :- atmost(a, r, n, f), sub(g, f).        // a \sqsubseteq \leq n r.f, g \sqsubseteq f  ->  a \sqsubseteq \leq n r.g   (fewer things to count)
+atmost(a, s, n, f) :- atmost(a, r, n, f), subp(s, r).       // a \sqsubseteq \leq n r.f, s \sqsubseteq r  ->  a \sqsubseteq \leq n s.f   (fewer successors to count)
+
+// bridges: a saturated restriction meets a left-hand one
+
+sub(a, g) :- some(a, r, f),       someLHS(r, f, g).                     // a \sqsubseteq \exists r.f,   \exists r.f \sqsubseteq g   ->  a \sqsubseteq g
+sub(a, g) :- only(a, r, f),       onlyLHS(r, f, g).                     // a \sqsubseteq \forall r.f,   \forall r.f \sqsubseteq g   ->  a \sqsubseteq g
+sub(a, g) :- atleast(a, r, m, f), atleastLHS(r, n, f, g), m >= n.       // a \sqsubseteq \geq m r.f, \geq n r.f \sqsubseteq g ->  a \sqsubseteq g  when m \geq  n
+sub(a, g) :- atmost(a, r, m, f),  atmostLHS(r, n, f, g),  m <= n.       // a \sqsubseteq \leq m r.f, \leq n r.f \sqsubseteq g ->  a \sqsubseteq g  when m \leq  n
+
+// clashes: the restrictions of a and b cannot hold of one individual
+
+disj(a, b) :- some(a, r, f), only(b, r, g), disj(f, g).                         // D1: a forced r-successor in f, all r-successors in g, f and g are disjoint.
+disj(a, b) :- atleast(a, r, n, f), atmost(b, r, m, f), n > m.                   // D2: at least n and at most m r-successors in f, n > m
+disj(a, b) :- some(a, t, f), some(b, t, g), disj(f, g), atmost(TOP, t, 1, TOP). // D3: two forced t-successors in disjoint classes (with t functional)
+
+// D4 (a lower bound of two or more on a functional property) is D2 with the TOP fact inherited.
+// D5 (a forced successor outside the property's range) is D1 with the TOP fact inherited.
+
+// unsatisfiability
+
+unsat(c) :- disj(c, c).                                 // a class disjoint with itself is empty
+unsat(a) :- some(a, r, f), unsat(f).                    // a forced successor in an empty class
+
+// The two rules below are D1 and D2 with a = b, and follow from unsat(c) :- disj(c, c);
+// they are kept so that the single-class reading is visible in the file
+
+unsat(a) :- some(a, r, f), only(a, r, g), disj(f, g).
+unsat(a) :- atleast(a,r,n,f), atmost(a,r,m,f), n > m.
