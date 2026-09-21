@@ -1,0 +1,23 @@
+witness	unsat	blamed	min_loss	minimal_repairs
+w1	2	3	0.5	weaken >:writes; weaken >:Book
+w2	0	0	0.0	(none needed)
+w3	2	3	0.5	weaken >:hasReviewer; weaken >:Reviewer
+w4	0	0	0.0	(none needed)
+w5	3	2	0.5	weaken >:Course
+w6	2	3	0.5	weaken >:writes; weaken >:Book
+d1_role	2	3	0.5	weaken >:writes; weaken >:Book
+d1_filler	2	3	0.5	weaken >:writes; weaken >:Book
+d1_subject	1	3	0.5	weaken >:writes; weaken >:Book; weaken >:Author
+d2_base	2	2	0.5	weaken <:hasReviewer
+d2_role	2	2	0.5	weaken <:hasReviewer
+d3_base	2	3	0.5	weaken <:hasCorrespondingAuthor; weaken >:Student
+d3_role	1	3	0.5	weaken <:hasSubmitter; weaken >:Student; weaken >:Paper
+d4_base	1	1	0.5	weaken <:hasReviewer
+d4_role	1	1	0.5	weaken <:hasReviewer
+d5_base	1	2	0.5	weaken <:hasReviewer; weaken >:PCMember
+d5_role	1	2	0.5	weaken <:hasReviewer; weaken >:PCMember
+d5_filler	1	2	0.5	weaken <:hasReviewer; weaken >:PCMember
+s1_definition	1	2	0.5	weaken >:hasReviewer; weaken <:Paper
+s1_domain	1	2	0.5	weaken >:deployed; weaken >:DefenceAsset
+s2_definition	1	3	0.5	weaken <:hasReviewer; weaken <:Paper; weaken >:PCMember
+s3_definition	1	2	0.5	weaken <:hasReviewer; weaken <:Paper

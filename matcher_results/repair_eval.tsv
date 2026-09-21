@@ -1,0 +1,199 @@
+witness	arm	kept	weakened	discarded	extra	loss	min_loss	coherent	equals_example	resolves	minimal	modified
+w1	aml	3	0	1	0	1.0	0.5	True	False	True	False	discard:writes
+w2	aml	2	0	1	0	1.0	0.0	True	False	False	False	discard:edits
+w3	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+w4	aml	2	0	1	0	1.0	0.0	True	False	False	False	discard:hasReviewer
+w5	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	aml	3	0	1	0	1.0	0.5	True	False	True	False	discard:writes
+d1_role	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:writes
+d1_filler	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:writes
+d1_subject	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:writes
+d2_base	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d2_role	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d3_base	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:hasCorrespondingAuthor
+d3_role	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:hasSubmitter
+d4_base	aml	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d4_role	aml	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_base	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_domain	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	aml	2	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s3_definition	aml	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+w1	aml_auto_props	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	aml_auto_props	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	aml_auto_props	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	aml_auto_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	aml_auto_props	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	aml_auto_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	aml_auto_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	aml_auto_props	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	aml_auto_props	1	0	0	1	0.0	0.5	False	False	False	False	
+d5_base	aml_auto_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	aml_auto_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	aml_auto_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	aml_auto_props	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	aml_auto_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	aml_auto_props	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	aml_auto_props	2	0	0	0	0.0	0.5	False	True	False	False	
+w1	aml_props	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	aml_props	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	aml_props	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	aml_props	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	aml_props	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	aml_props	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	aml_props	1	0	0	0	0.0	0.5	False	True	False	False	
+d5_base	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d5_role	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+d5_filler	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_definition	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+s2_definition	aml_props	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	aml_props	2	0	0	0	0.0	0.5	False	True	False	False	
+w1	fork	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	fork	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	fork	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	fork	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	fork	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	fork	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	fork	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	fork	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	fork	1	0	0	0	0.0	0.5	False	True	False	False	
+d5_base	fork	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	fork	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	fork	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	fork	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	fork	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	fork	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	fork	2	0	0	0	0.0	0.5	False	True	False	False	
+w1	fork_liberal	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	fork_liberal	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	fork_liberal	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	fork_liberal	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	fork_liberal	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	fork_liberal	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	fork_liberal	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	fork_liberal	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	fork_liberal	1	0	0	0	0.0	0.5	False	True	False	False	
+d5_base	fork_liberal	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	fork_liberal	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	fork_liberal	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	fork_liberal	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	fork_liberal	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	fork_liberal	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	fork_liberal	2	0	0	0	0.0	0.5	False	True	False	False	
+w1	fork_liberal_rr	3	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+w2	fork_liberal_rr	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Reviewer
+w4	fork_liberal_rr	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	fork_liberal_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	fork_liberal_rr	3	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_role	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_filler	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_subject	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Author
+d2_base	fork_liberal_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Paper
+d2_role	fork_liberal_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Paper
+d3_base	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Student
+d3_role	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Student
+d4_base	fork_liberal_rr	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d4_role	fork_liberal_rr	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_base	fork_liberal_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+d5_role	fork_liberal_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+d5_filler	fork_liberal_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+s1_definition	fork_liberal_rr	1	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+s1_domain	fork_liberal_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:deployed, weaken >:DefenceAsset
+s2_definition	fork_liberal_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+s3_definition	fork_liberal_rr	1	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+w1	fork_rr	3	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+w2	fork_rr	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Reviewer
+w4	fork_rr	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	fork_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	fork_rr	3	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_role	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_filler	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Book
+d1_subject	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Author
+d2_base	fork_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Paper
+d2_role	fork_rr	1	0	1	0	1.0	0.5	True	False	True	False	discard:Paper
+d3_base	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Student
+d3_role	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken >:Student
+d4_base	fork_rr	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d4_role	fork_rr	0	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_base	fork_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+d5_role	fork_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+d5_filler	fork_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:hasReviewer, weaken >:PCMember
+s1_definition	fork_rr	1	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+s1_domain	fork_rr	0	1	1	0	1.5	0.5	True	False	True	False	discard:deployed, weaken >:DefenceAsset
+s2_definition	fork_rr	2	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+s3_definition	fork_rr	1	1	0	0	0.5	0.5	True	False	True	True	weaken <:Paper
+w1	stock	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	stock	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	stock	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	stock	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	stock	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	stock	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	stock	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	stock	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	stock	1	0	0	0	0.0	0.5	False	True	False	False	
+d5_base	stock	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	stock	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	stock	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	stock	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	stock	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	stock	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	stock	2	0	0	0	0.0	0.5	False	True	False	False	
+w1	stock_lowconf	4	0	0	0	0.0	0.5	False	True	False	False	
+w2	stock_lowconf	3	0	0	0	0.0	0.0	True	True	True	True	
+w3	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+w4	stock_lowconf	3	0	0	0	0.0	0.0	True	True	True	True	
+w5	stock_lowconf	1	0	1	0	1.0	0.5	True	False	True	False	discard:Course
+w6	stock_lowconf	4	0	0	0	0.0	0.5	False	True	False	False	
+d1_role	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_filler	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+d1_subject	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+d2_base	stock_lowconf	2	0	0	0	0.0	0.5	False	True	False	False	
+d2_role	stock_lowconf	2	0	0	0	0.0	0.5	False	True	False	False	
+d3_base	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+d3_role	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+d4_base	stock_lowconf	1	0	0	0	0.0	0.5	False	True	False	False	
+d4_role	stock_lowconf	1	0	0	0	0.0	0.5	False	True	False	False	
+d5_base	stock_lowconf	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_role	stock_lowconf	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+d5_filler	stock_lowconf	1	0	1	0	1.0	0.5	True	False	True	False	discard:hasReviewer
+s1_definition	stock_lowconf	2	0	0	0	0.0	0.5	False	True	False	False	
+s1_domain	stock_lowconf	1	0	1	0	1.0	0.5	True	False	True	False	discard:deployed
+s2_definition	stock_lowconf	3	0	0	0	0.0	0.5	False	True	False	False	
+s3_definition	stock_lowconf	2	0	0	0	0.0	0.5	False	True	False	False	

@@ -1,0 +1,3 @@
+entity1	entity2	relation	confidence	kind
+http://example.org/o1#Paper	http://example.org/o2#Paper	=	0.99	class
+http://example.org/o1#Student	http://example.org/o2#Student	=	0.99	class

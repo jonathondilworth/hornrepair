@@ -1,0 +1,2 @@
+entity1	entity2	relation	confidence	kind
+http://example.org/o1#Programme	http://example.org/o2#Programme	=	0.99	class

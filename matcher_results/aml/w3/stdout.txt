@@ -1,0 +1,40 @@
+Loading source ontology
+http://example.org/o1 loaded in 0 seconds
+Classes: 2
+Individuals: 0
+Properties: 1
+Loading target ontology
+http://example.org/o2 loaded in 0 seconds
+Classes: 3
+Individuals: 0
+Properties: 1
+Direct Relationships: 1
+Running transitive closure on RelationshipMap
+Transitive closure finished in 0 seconds
+Extended Relationships: 1
+Disjoints: 0
+Reading config.ini file
+Finished!
+Running Lexical Matcher
+Finished in 0 seconds
+Running WordNet Matcher
+Finished in 0 seconds
+WordNet selected
+Building Word Lexicons
+Running Word Matcher
+Blocks to match: 1x1
+.
+Finished in 0 seconds
+Running String Matcher
+Finished in 0 seconds
+Running Multi-Word Matcher
+Finished in 0 seconds
+Running Spaceless Lexical Matcher
+Finished in 0 seconds
+Extending Alignment with Neighbor Similarity Matcher
+Finished in 0 seconds
+Performing Selection
+Finished in 0 seconds
+Building Repair Map
+Nothing to repair!
+Alignment is coherent

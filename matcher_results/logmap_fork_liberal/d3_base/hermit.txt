@@ -1,0 +1,2 @@
+http://example.org/o1#Paper
+http://example.org/o2#Paper

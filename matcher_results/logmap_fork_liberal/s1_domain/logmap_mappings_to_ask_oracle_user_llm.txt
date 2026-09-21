@@ -1,0 +1,1 @@
+http://example.org/o1#deployed|http://example.org/o2#deployed|=|0.8|OPROP

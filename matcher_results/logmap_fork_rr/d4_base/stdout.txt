@@ -1,0 +1,5 @@
+[restriction-repair] Property-only conflict: id=1 http://example.org/o2#Paper, blamed anchor labels=1+0d
+[restriction-repair]   deleted property anchor http://example.org/o1#hasReviewer = http://example.org/o2#hasReviewer (confidence 1.0)
+[restriction-repair]   resolved by property-anchor deletion: id=1
+
+Num unsat classes after integration: 0

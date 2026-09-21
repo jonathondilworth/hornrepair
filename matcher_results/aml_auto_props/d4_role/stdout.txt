@@ -1,0 +1,21 @@
+Loading source ontology
+http://example.org/o1 loaded in 0 seconds
+Classes: 0
+Individuals: 0
+Properties: 1
+Loading target ontology
+http://example.org/o2 loaded in 0 seconds
+Classes: 1
+Individuals: 0
+Properties: 2
+Direct Relationships: 0
+Running transitive closure on RelationshipMap
+Transitive closure finished in 0 seconds
+Extended Relationships: 0
+Disjoints: 0
+Reading config.ini file
+Finished!
+Running Hybrid String Matcher
+Finished in 0 seconds
+Running Hybrid String Matcher
+Finished in 1 seconds

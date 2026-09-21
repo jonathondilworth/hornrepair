@@ -1,0 +1,2 @@
+entity1	entity2	relation	confidence	kind
+http://example.org/o1#hasReviewer	http://example.org/o2#hasReviewer	=	1.0	property
