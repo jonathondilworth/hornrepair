@@ -8,7 +8,7 @@ A narration prints, in this order: the axioms of both ontologies in Manchester s
 the Turtle, not from the facts), the alignment, the dropped-axiom report, the base facts, the
 part of the closure that touches an unsatisfiable class or a mapped entity (base facts marked
 [base], derived ones [derived]), the unsatisfiable classes, the blame sets, the mappings in no
-blame set, and the README's one-sentence explanation of the witness. The summary table ends
+blame set, and the one-sentence explanation of the witness from examples.md. The summary table ends
 every row with PASS or FAIL against the witness's expected.json. Outputs go to `out/demo/<witness>/`.
 """
 
@@ -58,12 +58,15 @@ def read_facts(directory: Path, suffix: str) -> list[Fact]:
     return facts
 
 
-def readme_lines(w: str) -> dict[str, str]:
+EXAMPLES = ROOT / "examples.md"
+
+
+def example_lines(w: str) -> dict[str, str]:
     """
-    The `Rules:` and `Why:` lines of the witness's section in README.md. The README is the one
+    The `Rules:` and `Why:` lines of the witness's section in examples.md. That file is the one
     place those sentences are written, so the demo reads them rather than repeating them.
     """
-    text = (ROOT / "README.md").read_text()
+    text = EXAMPLES.read_text()
     section_match = re.search(rf"^### {w}\b.*?(?=^### |^## |\Z)", text, re.S | re.M)
     section_text = section_match[0] if section_match else ""
     return dict(re.findall(r"^(Rules|Why): (.+)$", section_text, re.M))
@@ -118,7 +121,7 @@ def narrate(w: str, normaliser: str) -> str:
         parts.append(section("Unsatisfiable classes:", [short(c) for c in sorted(result["unsat"])]))
         parts.append(section("Blame sets (delete-one):", blame_lines))
         parts.append(section("Mappings in no blame set:", [describe(by_id[m]) for m in result["unblamed"]]))
-    parts.append(f"Why: {readme_lines(w).get('Why', '(no README entry)')}")
+    parts.append(f"Why: {example_lines(w).get('Why', '(no examples.md entry)')}")
     parts.append(f"Result: {result['verdict']} against expected.json")
     return "\n\n".join(parts) + "\n"
 
@@ -128,7 +131,7 @@ def table(normaliser: str) -> str:
     rows = [("witness", "mappings", "unsat", "blame", "rules exercised", "result")]
     for w in NAMES:
         result = run_witness(w, ROOT / "out" / "demo" / w, normaliser)
-        rules = readme_lines(w).get("Rules", "")
+        rules = example_lines(w).get("Rules", "")
         if "error" in result:
             rows.append((w, "-", "raises", "-", rules, result["verdict"]))
         else:
