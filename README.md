@@ -1,6 +1,8 @@
 # hornrepair
 
-This hornrepair repository provides a _proof-of-concept_ that detects unsatisfiabilities introduced by cardinality restrictions during ontology matching pipelines. The demonstration uses [souffle-flavoured datalog rules](rules/repair.dl) with a [(naive) matching pipeline implemented in Python](hornrepair/cli.py). Specifically, it finds classes that an alignment makes unsatisfiable through existential, universal and cardinality restrictions. This is a class of conflict that a _class hierarchy plus disjointness projection_ cannot see. It does so with a sound-but-incomplete Horn approximation of the merged ontologies, executed as a Souffle datalog program, and reports for each unsatisfiable class the mappings whose removal would restore coherence.
+This hornrepair repository provides a _proof-of-concept_ that detects unsatisfiabilities introduced by cardinality restrictions during ontology matching pipelines. The demonstration uses [souffle-flavoured datalog rules](rules/repair.dl) with a [(naive) matching pipeline implemented in Python](hornrepair/cli.py). 
+
+Specifically, it finds classes that an alignment makes unsatisfiable through existential, universal and cardinality restrictions. This is a class of conflict that a _class hierarchy plus disjointness projection_ cannot see. It does so with a sound-but-incomplete Horn approximation of the merged ontologies, executed as a Souffle datalog program, and reports for each unsatisfiable class the mappings whose removal would restore coherence.
 
 ## Install
 
@@ -53,9 +55,11 @@ The full list of general witnesses and the restriction-essential cases are provi
 ## Experiments: Ontology Alignment Repair
 
 A _repair_ transforms $\mathcal{M}$ into $\mathcal{M}^{\prime}$ through two potential operations applied to any correspondence $m \in \mathcal{M}$: (i) discarding, and (ii) weakening an equivalence to one of its two directions. These operations should apply to **both class and to property correspondences**. That is, a property equivalence $r \equiv s$ may be weakened to $r \sqsubseteq s$ or to $s \sqsubseteq r$ similarly to a class equivalence may. We define a repair as **effective** if $U(\mathcal{O}_{\mathcal{M}^{\prime}}) = \varnothing$, noting that its cost (per our methodology) is modelled by the loss
+
 $$
 \operatorname{loss}(\mathcal{M}, \mathcal{M}^{\prime}) = \sum \{\, c_m \mid m \in \mathcal{M} \text{ discarded} \,\} + \tfrac{1}{2} \sum \{\, c_m \mid m \in \mathcal{M} \text{ weakened} \,\},
 $$
+
 such that weakening retains half of a correspondence's value. Among all effective repairs we prefer those that minimise this loss.
 
 ### Testing Existing Matchers on the Witnesses
