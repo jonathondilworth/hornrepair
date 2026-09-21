@@ -16,6 +16,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+##
+# Here, we simply call Souffle to produce (what Datalog people call a fixpoint -- probably simpler to think of) 
+# the "closure" or "materialisation").
+##
+
 RULES = Path(__file__).resolve().parent.parent / "rules" / "repair.dl"
 
 INSTALL_HINT = "install Soufflé (https://souffle-lang.github.io, 2.4 tested) and put `souffle` on PATH"

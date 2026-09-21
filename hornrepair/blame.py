@@ -15,6 +15,9 @@ from pathlib import Path
 from hornrepair.engine import run
 from hornrepair.extract import Fact
 
+##
+# Here, this is just a naive means of producing justifications (see above).
+##
 
 def write_facts_without(source: Path, target: Path, removed: list[Fact]) -> None:
     """

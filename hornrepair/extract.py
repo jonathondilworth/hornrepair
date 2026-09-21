@@ -35,6 +35,33 @@ from hornrepair.matcher import Mapping
 
 Fact = tuple[str, ...]  # (relation, argument, ...): IRIs as full strings, numbers as digit strings
 
+
+##
+# The extract step essentially transforms the TBox axioms into datalog facts.
+# For instance, we declare `.decl sub(c, d)` and `.decl cls(c)` in the rules, with `cls(TOP).` `sub(c, TOP) :- cls(c).`
+# so we will need to "extract" the logical axioms from the ontologies, such as:
+#
+# :Book a owl:Class ;
+#   rdfs:label "Book" ;
+#   rdfs:subClassOf :Document .
+#
+# which says that a "Book" is a class, and that a "Book" is a subclass of "Document".
+# Such that they are usable as inputs to our inference engine. The `.facts` files are just URIs.
+# So for `cls.facts` and `sub.facts` we would get:
+#
+# http://example.org/o1#Book     (cls.facts)
+# http://example.org/o1#Document (cls.facts)
+#
+# http://example.org/o1#Book    http://example.org/o1#Document (sub.facts)
+#
+# In essence, each logical axiom is observed and either becomes a fact (as above) or is dropped (if it does not match a shape we have defiend).
+# Note that for Domain axioms, for instance, their restrictions are on the LEFT HAND SIDE (LHS)! This is why we have the LHS shapes.
+# The mappings must also be extracted; they are extracted last. 
+# Recall that equivalance becomes two directed inclusions, so the mappings become `sub` or `subp` facts.
+# Dropping axioms is sound, since fewer facts means fewer conclusions (monotonicity).
+##
+
+
 THING = str(OWL.Thing)
 
 # Argument roles of every relation, in the order the rule file declares them.

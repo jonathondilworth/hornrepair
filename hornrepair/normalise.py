@@ -25,6 +25,12 @@ from hornrepair.manchester import expr
 JAR = Path(__file__).resolve().parent.parent / "normaliser" / "target" / "normaliser.jar"
 BUILD = "cd normaliser && mvn -q package"
 
+##
+# Simple "identity normaliser": walk the graph and check that every restriction filler is a named class.
+# If it is not one, it stops and names the axiom. Note that a Datalog fact (that we use in the next step)
+# has fixed slots for a class, property and filler, and a nested expression does not fit that shape.
+# So when `normalise` raises, well now you need to apply the hermit normaliser (see below).
+##
 
 def normalise(g: Graph) -> Graph:
     """Return `g` unchanged; raise if any some/allValuesFrom filler is not a named class."""
@@ -38,6 +44,11 @@ def normalise(g: Graph) -> Graph:
                 )
     return g
 
+##
+# You can simply run the HermiT normaliser and have it write its output directly to a file.
+# This will give every nested filler a fresh name like "internal:def#0" and will record this.
+# Note that restrictions themselves are never renamed, only their fillers.
+##
 
 def hermit(g: Graph, work_dir: Path, name: str) -> Path:
     """

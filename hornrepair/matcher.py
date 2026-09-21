@@ -17,8 +17,15 @@ from typing import NamedTuple
 from rdflib import Graph, URIRef
 from rdflib.namespace import OWL, RDF, RDFS
 
-KINDS = {"class": OWL.Class, "property": OWL.ObjectProperty}
+KINDS = {"class": OWL.Class, "property": OWL.ObjectProperty} # TODO: include OWL.DataProperty
 
+##
+# A VERY SIMPLE MATCHER! (by design)
+# - load ttl files
+# - for every class and object (see todo above) property:
+#       - the label becomes the key (if there is one) otherwise use the local name
+# - if the same key occurs in both ontologies, match it with a confidence of 1.
+##
 
 class Mapping(NamedTuple):
     e1: str

@@ -62,6 +62,12 @@ $$
 
 such that weakening retains half of a correspondence's value. Among all effective repairs we prefer those that minimise this loss.
 
+### Proof-of-concept Overview
+
+The pipeline is documented within [hornrepair/cli.py](hornrepair/cli.py), with each of the steps shown below as [small python scripts](./hornrepair/).
+
+![input-output-refined.svg](input-output-refined.svg)
+
 ### Testing Existing Matchers on the Witnesses
 
 The witnesses also serve to probe what current matchers do with **restriction-essential (RE)** cases/conflicts. Every pair was given to _stock_ LogMap (in its default configuration), to our [LogMap fork](#) that carries the restriction-aware repair, and to AgreementMakerLight (AML), where every output alignment was coherence-scored with HermiT. 
