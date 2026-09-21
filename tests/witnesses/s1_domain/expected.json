@@ -1,0 +1,12 @@
+{
+  "mappings": 2,
+  "unsat": [
+    "http://example.org/o1#MilitaryAsset"
+  ],
+  "blame": {
+    "http://example.org/o1#MilitaryAsset": [
+      "class:http://example.org/o1#DefenceAsset|http://example.org/o2#DefenceAsset",
+      "property:http://example.org/o1#deployed|http://example.org/o2#deployed"
+    ]
+  }
+}

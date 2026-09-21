@@ -1,0 +1,13 @@
+{
+  "mappings": 3,
+  "unsat": [
+    "http://example.org/o1#BiographicalAuthor"
+  ],
+  "blame": {
+    "http://example.org/o1#BiographicalAuthor": [
+      "class:http://example.org/o1#Author|http://example.org/o2#Author",
+      "class:http://example.org/o1#Book|http://example.org/o2#Book",
+      "property:http://example.org/o1#writes|http://example.org/o2#writes"
+    ]
+  }
+}

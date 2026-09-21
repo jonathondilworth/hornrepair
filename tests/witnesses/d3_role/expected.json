@@ -1,0 +1,13 @@
+{
+  "mappings": 3,
+  "unsat": [
+    "http://example.org/o1#StudentPaper"
+  ],
+  "blame": {
+    "http://example.org/o1#StudentPaper": [
+      "class:http://example.org/o1#Paper|http://example.org/o2#Paper",
+      "class:http://example.org/o1#Student|http://example.org/o2#Student",
+      "property:http://example.org/o1#hasSubmitter|http://example.org/o2#hasSubmitter"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+@prefix : <http://example.org/o1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/o1> a owl:Ontology .
+
+:Student a owl:Class ;
+    rdfs:label "Student" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+                      owl:onProperty :enrolledIn ;
+                      owl:someValuesFrom :Programme ] .
+
+:Programme a owl:Class ;
+    rdfs:label "Programme" ;
+    rdfs:subClassOf :Course .
+
+:Course a owl:Class ;
+    rdfs:label "Course" .
+
+:enrolledIn a owl:ObjectProperty ;
+    rdfs:label "enrolledIn" .

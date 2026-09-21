@@ -1,0 +1,21 @@
+@prefix : <http://example.org/o2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/o2> a owl:Ontology .
+
+:Paper a owl:Class ;
+    rdfs:label "Paper" .
+
+:Reviewed a owl:Class ;
+    rdfs:label "Reviewed" ;
+    owl:equivalentClass [ a owl:Restriction ; owl:onProperty :hasReviewer ; owl:someValuesFrom owl:Thing ] .
+
+:Unreviewed a owl:Class ;
+    rdfs:label "Unreviewed" ;
+    rdfs:subClassOf :Paper ;
+    owl:disjointWith :Reviewed .
+
+:hasReviewer a owl:ObjectProperty ;
+    rdfs:label "hasReviewer" .

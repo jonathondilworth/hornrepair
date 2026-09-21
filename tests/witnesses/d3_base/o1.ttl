@@ -1,0 +1,17 @@
+@prefix : <http://example.org/o1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/o1> a owl:Ontology .
+
+:Paper a owl:Class ;
+    rdfs:label "Paper" ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty :hasCorrespondingAuthor ; owl:someValuesFrom :Student ] .
+
+:Student a owl:Class ;
+    rdfs:label "Student" .
+
+:hasCorrespondingAuthor a owl:ObjectProperty ;
+    rdfs:label "hasCorrespondingAuthor" ;
+    a owl:FunctionalProperty .

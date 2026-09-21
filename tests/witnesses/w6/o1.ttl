@@ -1,0 +1,34 @@
+@prefix : <http://example.org/o1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/o1> a owl:Ontology .
+
+:Author a owl:Class ;
+    rdfs:label "Author" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+                      owl:onProperty :writes ;
+                      owl:someValuesFrom [ a owl:Class ;
+                                           owl:intersectionOf ( :Book
+                                                                [ a owl:Restriction ;
+                                                                  owl:onProperty :publishedBy ;
+                                                                  owl:someValuesFrom :Publisher ] ) ] ] .
+
+:Person a owl:Class ;
+    rdfs:label "Person" .
+
+:Book a owl:Class ;
+    rdfs:label "Book" ;
+    rdfs:subClassOf :Document .
+
+:Document a owl:Class ;
+    rdfs:label "Document" .
+
+:Publisher a owl:Class ;
+    rdfs:label "Publisher" .
+
+:writes a owl:ObjectProperty ;
+    rdfs:label "writes" .
+
+:publishedBy a owl:ObjectProperty ;
+    rdfs:label "publishedBy" .

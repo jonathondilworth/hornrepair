@@ -1,0 +1,13 @@
+{
+  "mappings": 3,
+  "unsat": [
+    "http://example.org/o2#StudentTrackPaper"
+  ],
+  "blame": {
+    "http://example.org/o2#StudentTrackPaper": [
+      "class:http://example.org/o1#PCMember|http://example.org/o2#PCMember",
+      "class:http://example.org/o1#Paper|http://example.org/o2#Paper",
+      "property:http://example.org/o1#hasReviewer|http://example.org/o2#hasReviewer"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "mappings": 3,
+  "unsat": [
+    "http://example.org/o1#Paper",
+    "http://example.org/o2#Paper"
+  ],
+  "blame": {
+    "http://example.org/o1#Paper": [
+      "class:http://example.org/o1#Paper|http://example.org/o2#Paper",
+      "class:http://example.org/o1#Reviewer|http://example.org/o2#Reviewer",
+      "property:http://example.org/o1#hasReviewer|http://example.org/o2#hasReviewer"
+    ],
+    "http://example.org/o2#Paper": [
+      "class:http://example.org/o1#Paper|http://example.org/o2#Paper",
+      "class:http://example.org/o1#Reviewer|http://example.org/o2#Reviewer",
+      "property:http://example.org/o1#hasReviewer|http://example.org/o2#hasReviewer"
+    ]
+  }
+}

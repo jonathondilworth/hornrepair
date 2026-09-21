@@ -1,0 +1,25 @@
+@prefix : <http://example.org/o2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/o2> a owl:Ontology .
+
+:Editor a owl:Class ;
+    rdfs:label "Editor" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+                      owl:onProperty :reviews ;
+                      owl:allValuesFrom :Article ] .
+
+:Book a owl:Class ;
+    rdfs:label "Book" ;
+    owl:disjointWith :Article .
+
+:Article a owl:Class ;
+    rdfs:label "Article" .
+
+:edits a owl:ObjectProperty ;
+    rdfs:label "edits" .
+
+:reviews a owl:ObjectProperty ;
+    rdfs:label "reviews" ;
+    rdfs:subPropertyOf :edits .

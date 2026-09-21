@@ -64,7 +64,7 @@ subp(r, t) :- subp(r, s), subp(s, t).       // property transitivity
 disj(c, d) :- disj(d, c).                   // disjointness is symmetric
 disj(c, e) :- sub(c, d), disj(d, e).        // and inherited by subclasses
 
-// With reflexivity this covers the report's lattice clash: c \sqsubseteq d, c \sqsubseteq e and d \sqcap e \sqsubseteq \bot
+// With reflexivity this covers the 'lattice-shaped clash', i.e., c \sqsubseteq d, c \sqsubseteq e and d \sqcap e \sqsubseteq \bot
 // give disj(c, e), then disj(e, c), then disj(c, c), i.e. unsat(c).
 
 // \exists and \geq 1 are the same restriction

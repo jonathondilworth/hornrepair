@@ -1,0 +1,22 @@
+{
+  "mappings": 2,
+  "unsat": [
+    "http://example.org/o1#Programme",
+    "http://example.org/o1#Student",
+    "http://example.org/o2#Programme"
+  ],
+  "blame": {
+    "http://example.org/o1#Programme": [
+      "class:http://example.org/o1#Programme|http://example.org/o2#Programme",
+      "class:http://example.org/o1#Course|http://example.org/o2#Course"
+    ],
+    "http://example.org/o1#Student": [
+      "class:http://example.org/o1#Programme|http://example.org/o2#Programme",
+      "class:http://example.org/o1#Course|http://example.org/o2#Course"
+    ],
+    "http://example.org/o2#Programme": [
+      "class:http://example.org/o1#Programme|http://example.org/o2#Programme",
+      "class:http://example.org/o1#Course|http://example.org/o2#Course"
+    ]
+  }
+}
