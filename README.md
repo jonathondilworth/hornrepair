@@ -64,7 +64,9 @@ such that weakening retains half of a correspondence's value. Among all effectiv
 
 ### Testing Existing Matchers on the Witnesses
 
-The witnesses also serve to probe what current matchers do with **restriction-essential (RE)** cases/conflicts. Every pair was given to _stock_ LogMap (in its default configuration), to our [LogMap fork](#) that carries the restriction-aware repair, and to AgreementMakerLight (AML), where every output alignment was coherence-scored with HermiT. We then check to see if the restriction-essential case was resolved (by any valid repair). An alignment is considered "over-repaired" when it is coherent and its loss exceeds the minimal effective loss for that witness (over all 22 witnesses). Of course, for a matcher that simply does not perform property matching, unsatisfiabilities will not be introduced (e.g., AML in automatic mode). Indeed, by conservatively rejecting property correspondences, the systems can effectively avoid conflicts, but may also discard potentially useful and important connections. It is also important to note that AML does not perform weakening.
+The witnesses also serve to probe what current matchers do with **restriction-essential (RE)** cases/conflicts. Every pair was given to _stock_ LogMap (in its default configuration), to our [LogMap fork](#) that carries the restriction-aware repair, and to AgreementMakerLight (AML), where every output alignment was coherence-scored with HermiT. 
+
+We then check to see if the restriction-essential case was resolved (by any valid repair). An alignment is considered "over-repaired" when it is coherent and its loss exceeds the minimal effective loss for that witness (over all 22 witnesses). Of course, for a matcher that simply does not perform property matching, unsatisfiabilities will not be introduced (e.g., AML in automatic mode). Indeed, by conservatively rejecting property correspondences, the systems can effectively avoid conflicts, but may also discard potentially useful and important connections. It is also important to note that AML does not perform weakening.
 
 | Configuration | = example matcher | coherent | resolves RE | minimal-loss RE | over-repaired |
 |---|---|---|---|---|---|
@@ -74,7 +76,13 @@ The witnesses also serve to probe what current matchers do with **restriction-es
 | AML, automatic mode, property matching on | 16/22 | 7/22 | 4/19 | 0/19 | 5/22 |
 | AML, manual mode, property matching on | 21/22 | 3/22 | 0/19 | 0/19 | 1/22 |
 
-The example matcher is hornrepair's own lexical alignment, with all equivalences at confidence 1. We assume it is what one would expect a matcher to propose on these pairs. *= example matcher* counts outputs identical to it. *coherent* counts outputs whose merged theory is HermiT-coherent (weakened correspondences are considered as one-directional inclusions, **not equivalences**). The remaining columns treat each output as a repair of the example alignment under the above-mentioned loss. *resolves RE* means "the matcher resolved the restriction-essential case". That is, it is coherent and every change is confined to a blamed correspondence. Note that if a property correspondence is never proposed, it can technically be counted as "discarded", so an output can resolve a case simply by omission. *minimal-loss RE* means resolved at the minimum loss, which is found by enumerating repairs over the blamed correspondences and testing each with HermiT. **For every incoherence-inducing witness that minimum is one weakening**. *over-repaired* counts coherent outputs whose loss exceeds the minimum.
+The example matcher is hornrepair's own lexical alignment, with all equivalences at confidence 1. We assume it is what one would expect a matcher to propose on these pairs. 
+
+*= example matcher* counts outputs identical to it. *coherent* counts outputs whose merged theory is HermiT-coherent (weakened correspondences are considered as one-directional inclusions, **not equivalences**). The remaining columns treat each output as a repair of the example alignment under the above-mentioned loss. 
+
+*resolves RE* means "the matcher resolved the restriction-essential case". That is, it is coherent and every change is confined to a blamed correspondence. Note that if a property correspondence is never proposed, it can technically be counted as "discarded", so an output can resolve a case simply by omission. 
+
+*minimal-loss RE* means resolved at the minimum loss, which is found by enumerating repairs over the blamed correspondences and testing each with HermiT. **For every incoherence-inducing witness that minimum is one weakening**. *over-repaired* counts coherent outputs whose loss exceeds the minimum.
 
 ## Roadmap / Future Work
 
