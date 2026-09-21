@@ -57,7 +57,7 @@ The full list of general witnesses and the restriction-essential cases are provi
 A _repair_ transforms $\mathcal{M}$ into $\mathcal{M}^{\prime}$ through two potential operations applied to any correspondence $m \in \mathcal{M}$: (i) discarding, and (ii) weakening an equivalence to one of its two directions. These operations should apply to **both class and to property correspondences**. That is, a property equivalence $r \equiv s$ may be weakened to $r \sqsubseteq s$ or to $s \sqsubseteq r$ similarly to a class equivalence may. We define a repair as **effective** if $U(\mathcal{O}_{\mathcal{M}^{\prime}}) = \varnothing$, noting that its cost (per our methodology) is modelled by the loss
 
 $$
-loss(\mathcal{M}, \mathcal{M}^{\prime}) = \sum \{\, c_m \mid m \in \mathcal{M} \text{ discarded} \,\} + \tfrac{1}{2} \sum \{\, c_m \mid m \in \mathcal{M} \text{ weakened} \,\},
+loss(\mathcal{M}, \mathcal{M}^{\prime}) = \sum \lbrace\, c_m \mid m \in \mathcal{M} \text{ discarded} \,\rbrace + \tfrac{1}{2} \sum \lbrace\, c_m \mid m \in \mathcal{M} \text{ weakened} \,\rbrace,
 $$
 
 such that weakening retains half of a correspondence's value. Among all effective repairs we prefer those that minimise this loss.
