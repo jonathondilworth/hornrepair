@@ -1,0 +1,23 @@
+witness	arm	maps	class	prop	missing_vs_intended	extra_vs_intended	hermit_unsat	matcher_own_view
+w1	logmap_v4_rr	4	3	1	-	-	0	logmap-hermit-unsat=0
+w2	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w3	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w4	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w5	logmap_v4_rr	1	1	0	Course	-	0	logmap-hermit-unsat=0
+w6	logmap_v4_rr	4	3	1	-	-	0	logmap-hermit-unsat=0
+d1_role	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d1_filler	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d1_subject	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d2_base	logmap_v4_rr	1	0	1	Paper	-	0	logmap-hermit-unsat=0
+d2_role	logmap_v4_rr	1	0	1	Paper	-	0	logmap-hermit-unsat=0
+d3_base	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d3_role	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d4_base	logmap_v4_rr	0	0	0	hasReviewer	-	0	logmap-hermit-unsat=0 | restriction-repair]   resolved by property-anchor deletion: id=1
+d4_role	logmap_v4_rr	0	0	0	hasReviewer	-	0	logmap-hermit-unsat=0 | restriction-repair]   resolved by property-anchor deletion: id=1
+d5_base	logmap_v4_rr	1	1	0	hasReviewer	-	0	logmap-hermit-unsat=0
+d5_role	logmap_v4_rr	1	1	0	hasReviewer	-	0	logmap-hermit-unsat=0
+d5_filler	logmap_v4_rr	1	1	0	hasReviewer	-	0	logmap-hermit-unsat=0
+s1_definition	logmap_v4_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+s1_domain	logmap_v4_rr	1	1	0	deployed	-	0	logmap-hermit-unsat=0
+s2_definition	logmap_v4_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+s3_definition	logmap_v4_rr	2	1	1	-	-	0	logmap-hermit-unsat=0

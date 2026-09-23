@@ -1,0 +1,3 @@
+<http://example.org/o1#Student> <http://www.w3.org/2002/07/owl#equivalentClass> <http://example.org/o2#Student> .
+<http://example.org/o1#Paper> <http://www.w3.org/2002/07/owl#equivalentClass> <http://example.org/o2#Paper> .
+<http://example.org/o1#hasCorrespondingAuthor> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://example.org/o2#hasCorrespondingAuthor> .

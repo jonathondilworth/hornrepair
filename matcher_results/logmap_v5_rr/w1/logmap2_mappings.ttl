@@ -1,0 +1,4 @@
+<http://example.org/o1#Document> <http://www.w3.org/2002/07/owl#equivalentClass> <http://example.org/o2#Document> .
+<http://example.org/o1#Author> <http://www.w3.org/2002/07/owl#equivalentClass> <http://example.org/o2#Author> .
+<http://example.org/o2#Book> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/o1#Book> .
+<http://example.org/o1#writes> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://example.org/o2#writes> .

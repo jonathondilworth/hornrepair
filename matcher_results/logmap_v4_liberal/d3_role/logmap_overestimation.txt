@@ -1,0 +1,3 @@
+http://example.org/o1#Student|http://example.org/o2#Student|=|1.0|CLS
+http://example.org/o1#Paper|http://example.org/o2#Paper|=|1.0|CLS
+http://example.org/o1#hasSubmitter|http://example.org/o2#hasSubmitter|=|0.8|OPROP

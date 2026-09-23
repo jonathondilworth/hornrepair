@@ -1,0 +1,3 @@
+entity1	entity2	relation	confidence	kind
+http://example.org/o1#DefenceAsset	http://example.org/o2#DefenceAsset	>	0.7	class
+http://example.org/o1#deployed	http://example.org/o2#deployed	=	1.0	property

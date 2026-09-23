@@ -1,2 +1,0 @@
-
-Num unsat classes after integration: 2

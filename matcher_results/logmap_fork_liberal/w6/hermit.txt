@@ -1,2 +1,0 @@
-http://example.org/o1#Author
-http://example.org/o2#Author

@@ -1,2 +1,0 @@
-http://example.org/o1#deployed|http://example.org/o2#deployed|=|0.8|OPROP
-http://example.org/o1#DefenceAsset|http://example.org/o2#DefenceAsset|>|0.51|CLS

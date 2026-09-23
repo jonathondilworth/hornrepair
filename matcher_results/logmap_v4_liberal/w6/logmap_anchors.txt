@@ -1,0 +1,3 @@
+http://example.org/o1#Book|http://example.org/o2#Book|=|0.51|CLS
+http://example.org/o1#Author|http://example.org/o2#Author|=|0.51|CLS
+http://example.org/o1#Document|http://example.org/o2#Document|=|0.51|CLS

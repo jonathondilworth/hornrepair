@@ -1,0 +1,2 @@
+<http://example.org/o1#deployed> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://example.org/o2#deployed> .
+<http://example.org/o2#DefenceAsset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/o1#DefenceAsset> .

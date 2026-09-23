@@ -1,0 +1,4 @@
+http://example.org/o1#Book|http://example.org/o2#Book|=|1.0|CLS
+http://example.org/o1#writes|http://example.org/o2#writes|=|0.8|OPROP
+http://example.org/o1#Author|http://example.org/o2#Author|=|1.0|CLS
+http://example.org/o1#Document|http://example.org/o2#Document|=|1.0|CLS

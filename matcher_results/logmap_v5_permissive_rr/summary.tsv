@@ -1,0 +1,23 @@
+witness	arm	maps	class	prop	missing_vs_intended	extra_vs_intended	hermit_unsat	matcher_own_view
+w1	logmap_v5_permissive_rr	4	3	1	-	-	0	logmap-hermit-unsat=0
+w2	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w3	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w4	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+w5	logmap_v5_permissive_rr	1	1	0	Course	-	0	logmap-hermit-unsat=0
+w6	logmap_v5_permissive_rr	4	3	1	-	-	0	logmap-hermit-unsat=0
+d1_role	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d1_filler	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d1_subject	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d2_base	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0 | restriction-repair] Plan with property-anchor direction(s) for id=0 http://examp
+d2_role	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0 | restriction-repair] Plan with property-anchor direction(s) for id=0 http://examp
+d3_base	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d3_role	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+d4_base	logmap_v5_permissive_rr	1	0	1	-	-	0	logmap-hermit-unsat=0 | restriction-repair] Plan with property-anchor direction(s) for id=1 http://examp
+d4_role	logmap_v5_permissive_rr	1	0	1	-	-	0	logmap-hermit-unsat=0 | restriction-repair] Plan with property-anchor direction(s) for id=1 http://examp
+d5_base	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+d5_role	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+d5_filler	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+s1_definition	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+s1_domain	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0
+s2_definition	logmap_v5_permissive_rr	3	2	1	-	-	0	logmap-hermit-unsat=0
+s3_definition	logmap_v5_permissive_rr	2	1	1	-	-	0	logmap-hermit-unsat=0

@@ -1,0 +1,2 @@
+<http://example.org/o1#Paper> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/o2#Paper> .
+<http://example.org/o1#hasReviewer> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://example.org/o2#hasReviewer> .

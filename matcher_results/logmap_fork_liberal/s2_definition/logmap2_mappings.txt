@@ -1,3 +1,0 @@
-http://example.org/o1#Paper|http://example.org/o2#Paper|=|0.7|CLS
-http://example.org/o1#PCMember|http://example.org/o2#PCMember|=|0.7|CLS
-http://example.org/o1#hasReviewer|http://example.org/o2#hasReviewer|=|1.0|OPROP

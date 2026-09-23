@@ -70,14 +70,18 @@ The pipeline is documented within [hornrepair/cli.py](hornrepair/cli.py), with e
 
 ### Testing Existing Matchers on the Witnesses
 
-The witnesses also serve to probe what current matchers do with **restriction-essential (RE)** cases/conflicts. Every pair was given to _stock_ LogMap (in its default configuration), to our [LogMap fork](#) that carries the restriction-aware repair, and to AgreementMakerLight (AML), where every output alignment was coherence-scored with HermiT. 
+The witnesses also serve to probe what current matchers do with **restriction-essential (RE)** cases/conflicts. Every pair was given to _stock_ LogMap (in its default configuration), to stock LogMap with liberal property admission, to our [LogMap fork](#) that carries the restriction-aware repair (v4: restriction-aware repair only; v5: plus property-correspondence weakening and admission before repair), and to AgreementMakerLight (AML), where every output alignment was coherence-scored with HermiT. 
 
 We then check to see if the restriction-essential case was resolved (by any valid repair). An alignment is considered "over-repaired" when it is coherent and its loss exceeds the minimal effective loss for that witness (over all 22 witnesses). Of course, for a matcher that simply does not perform property matching, unsatisfiabilities will not be introduced (e.g., AML in automatic mode). Indeed, by conservatively rejecting property correspondences, the systems can effectively avoid conflicts, but may also discard potentially useful and important connections. It is also important to note that AML does not perform weakening.
 
 | Configuration | = example matcher | coherent | resolves RE | minimal-loss RE | over-repaired |
 |---|---|---|---|---|---|
 | stock LogMap | 17/22 | 7/22 | 4/19 | 0/19 | 5/22 |
-| Our LogMap fork, restriction repair on | 2/22 | 22/22 | 19/19 | 11/19 | 9/22 |
+| stock LogMap, liberal property admission | 21/22 | 3/22 | 0/19 | 0/19 | 1/22 |
+| Our LogMap fork v4, restriction repair on | 2/22 | 22/22 | 19/19 | 11/19 | 9/22 |
+| Our LogMap fork v4, restriction repair on, liberal admission | 2/22 | 22/22 | 19/19 | 15/19 | 5/22 |
+| Our LogMap fork v5 (+ property weakening, admission before repair) | 2/22 | 22/22 | 19/19 | 15/19 | 5/22 |
+| Our LogMap fork v5, liberal admission (also: permissive, or admission off) | 2/22 | 22/22 | 19/19 | 19/19 | 1/22 |
 | AML, automatic mode as shipped | 0/22 | 22/22 | 19/19 | 0/19 | 22/22 |
 | AML, automatic mode, property matching on | 16/22 | 7/22 | 4/19 | 0/19 | 5/22 |
 | AML, manual mode, property matching on | 21/22 | 3/22 | 0/19 | 0/19 | 1/22 |
@@ -92,5 +96,5 @@ The example matcher is hornrepair's own lexical alignment, with all equivalences
 
 ## Roadmap / Future Work
 
-* Modify the LogMap fork to include weakening property correspondences (at present it achieves minimal-loss on some examples by class weakening).
+* ~~Modify the LogMap fork to include weakening property correspondences.~~ Done (22 September 2026): every restriction-essential witness is now repaired at minimal loss.
 * **TODO: extend this list.**

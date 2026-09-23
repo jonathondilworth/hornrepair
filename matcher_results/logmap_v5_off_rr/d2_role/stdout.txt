@@ -1,0 +1,4 @@
+[restriction-repair]   weakened object-property anchor http://example.org/o1#hasReviewer = http://example.org/o2#hasReviewer (kept: http://example.org/o1#hasReviewer SubPropertyOf http://example.org/o2#hasReviewer)
+[restriction-repair] Plan with property-anchor direction(s) for id=0 http://example.org/o1#Paper: [anchor oprop 0 <- 2 (ANCHOR) (3)]
+
+Num unsat classes after integration: 0

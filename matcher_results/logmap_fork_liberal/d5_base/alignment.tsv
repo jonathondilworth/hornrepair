@@ -1,2 +1,0 @@
-entity1	entity2	relation	confidence	kind
-http://example.org/o1#PCMember	http://example.org/o2#PCMember	=	0.7	class

@@ -1,0 +1,2 @@
+http://example.org/o1#MilitaryAsset|http://example.org/o2#DefenceAsset|=|0.4|CLS
+http://example.org/o1#DefenceAsset|http://example.org/o2#DefenceAsset|>|0.8|CLS
